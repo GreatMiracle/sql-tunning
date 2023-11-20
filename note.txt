@@ -1,0 +1,195 @@
+Dưới đây là một số phổ biến các OPERATION mà bạn có thể gặp khi đọc kết quả từ dbms_xplan.display_cursor và ý nghĩa cơ bản của chúng:
+
+SELECT STATEMENT:
+Đại diện cho toàn bộ câu truy vấn SELECT.
+================================================================
+
+TABLE ACCESS:
+Thực hiện truy xuất dữ liệu từ một bảng.
+================================================================
+
+INDEX RANGE SCAN:
+Sử dụng index để tìm kiếm một phạm vi (range) của giá trị.
+===============================================================
+
+INDEX UNIQUE SCAN:
+Sử dụng index để thực hiện quét duy nhất và truy xuất dữ liệu từ bảng.
+================================================================
+
+NESTED LOOPS:
+Thực hiện phép nối lồng nhau giữa hai hoặc nhiều bảng.
+================================================================
+
+MERGE JOIN:
+Thực hiện phép nối dựa trên các điều kiện ghép nối sắp xếp trước.
+================================================================
+
+HASH JOIN:
+Thực hiện phép nối bằng cách sử dụng một bảng băm để tối ưu hóa hiệu suất.
+================================================================
+ 
+SORT:
+Sắp xếp dữ liệu theo một hoặc nhiều cột.
+================================================================
+ 
+FILTER:
+Lọc dữ liệu dựa trên điều kiện.
+================================================================
+ 
+AGGREGATE:
+Thực hiện các hàm tổng hợp như COUNT, SUM, AVG.
+================================================================
+ 
+HASH:
+Thực hiện băm dữ liệu, thường được sử dụng trong các phép toán nối.
+================================================================
+ 
+VIEW:
+Đại diện cho một câu truy vấn tạo ra một view.
+================================================================
+ 
+CONNECT BY:
+Sử dụng trong các truy vấn hiện thực cây (tree).
+================================================================
+ 
+INDEX FAST FULL SCAN:
+Quét toàn bộ index để truy xuất dữ liệu nhanh chóng.
+================================================================
+ 
+PARTITION RANGE:
+Thực hiện quét dữ liệu từ một phạm vi partition.
+================================================================
+ 
+TABLE FUNCTION:
+Sử dụng một hàm bảng (table function) để xử lý dữ liệu.
+================================================================
+ 
+INDEX FULL SCAN:
+Quét toàn bộ index để truy xuất dữ liệu.
+================================================================
+ 
+INDEX SKIP SCAN:
+Thực hiện quét index bằng cách bỏ qua một số giá trị.
+================================================================
+ 
+INDEX JOIN:
+Sử dụng index để thực hiện phép nối.
+================================================================
+ 
+INDEX MERGE:
+Sử dụng nhiều index và kết hợp kết quả.
+================================================================
+ 
+HASH JOIN BATCHED:
+Phiên bản cải tiến của HASH JOIN, được thực hiện theo các phần.
+================================================================
+ 
+FILTER (WITH INDEX):
+Lọc dữ liệu sử dụng index.
+================================================================
+ 
+UNION-ALL:
+Kết hợp các tập kết quả từ nhiều câu truy vấn SELECT.
+================================================================
+ 
+INTERSECTION:
+Trả về các dòng chung của hai hoặc nhiều tập dữ liệu.
+================================================================
+ 
+MINUS:
+Trả về các dòng không có trong tập dữ liệu thứ nhì.
+================================================================
+ 
+SORT AGGREGATE:
+Sắp xếp dữ liệu trước khi thực hiện tổng hợp.
+================================================================
+ 
+TABLE QUEUE:
+Thực hiện các phép toán hàng đợi trên bảng.
+================================================================
+ 
+REMOTE:
+Thực hiện các phép toán trên một cơ sở dữ liệu từ xa.
+================================================================
+ 
+MATERIALIZE:
+Tạo và lưu trữ một bảng tạm thời trong bộ nhớ.
+================================================================
+ 
+WINDOW:
+Thực hiện các phép toán liên quan đến cửa sổ, như RANK, DENSE_RANK.
+================================================================
+ 
+PX COORDINATOR:
+Điều phối các nhiệm vụ song song trong một môi trường RAC (Real Application Cluster).
+================================================================
+ 
+PX SEND:
+Gửi dữ liệu giữa các bước thực hiện song song.
+================================================================
+ 
+PX BLOCK ITERATOR:
+Thực hiện vòng lặp trên các khối dữ liệu trong môi trường song song.
+================================================================
+ 
+PARTITION HASH ALL:
+Thực hiện phép toán trên tất cả các phân vùng sử dụng băm.
+================================================================
+ 
+JOIN FILTER:
+Lọc kết quả nối dựa trên điều kiện.
+================================================================
+
+BITMAP CONVERSION TO ROWIDS:
+Chuyển đổi các dãy bit thành danh sách các RowIDs tương ứng.
+================================================================
+ 
+BITMAP INDEX SINGLE VALUE:
+Sử dụng index bitmap để truy xuất giá trị độc lập.
+================================================================
+ 
+BITMAP INDEX RANGE SCAN:
+Quét một phạm vi giá trị sử dụng index bitmap.
+================================================================
+ 
+BITMAP MERGE:
+Kết hợp các kết quả từ nhiều phép quét bitmap.
+================================================================
+ 
+BITMAP AND:
+Thực hiện phép toán logic AND trên các bitmap.
+================================================================
+ 
+BITMAP OR:
+Thực hiện phép toán logic OR trên các bitmap.
+================================================================
+ 
+BITMAP MINUS:
+Thực hiện phép toán logic MINUS trên các bitmap.
+================================================================
+ 
+BITMAP CONVERSION FROM ROWIDS:
+Chuyển đổi các RowIDs thành dãy bit tương ứng.
+================================================================
+ 
+BITMAP JOIN INDEX:
+Sử dụng bitmap để thực hiện phép nối.
+================================================================
+CPU Cost:
+Ý nghĩa: Đây là số lượng chu kỳ CPU ước tính cần thiết để thực hiện một phần của truy vấn.
+Giải thích: Mức độ này đo lường tài nguyên CPU được ước tính cần thiết để thực hiện một hoạt động nhất định trong kế hoạch thực hiện. Giá trị càng cao, càng tốn kém về mặt CPU.
+
+================================================================
+IO Cost:
+Ý nghĩa: Đây là số lượng block dữ liệu ước tính cần thiết để đọc từ hoặc ghi vào bộ nhớ hoặc đĩa.
+Giải thích: Mức độ này đo lường tài nguyên đọc/ghi vào bộ nhớ hoặc đĩa cần thiết để thực hiện một hoạt động. Giá trị càng cao, càng tốn kém về mặt I/O.
+
+================================================================
+Cardinality:
+Ý nghĩa: Số lượng dòng dữ liệu ước tính sẽ được sản xuất hoặc đầu ra từ một phần của truy vấn.
+Giải thích: Số lượng dòng ước tính của kết quả trả về từ một phần cụ thể của truy vấn. Giá trị này có thể ảnh hưởng đến kích thước của bảng ghi chép và có thể được sử dụng để ước tính dung lượng bộ nhớ cần thiết.
+
+================================================================
+Depth:
+Ý nghĩa: Mức độ thụt lùi của hoạt động trong cây kế hoạch thực hiện.
+Giải thích: Số lượng mức thụt lùi của một hoạt động trong cây kế hoạch thực hiện. Nó chỉ ra vị trí của hoạt động trong cây thực hiện. Những hoạt động có cùng mức thụt lùi được thực hiện ở cùng một cấp độ trong kế hoạch thực hiện. Mức thụt lùi càng lớn, mức độ lồng nhau của các hoạt động càng cao.
