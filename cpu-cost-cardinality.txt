@@ -1,0 +1,23 @@
+Oracle cung cấp hai loại trình tối ưu hóa (optimizer) chính: trình tối ưu hóa dựa trên chi phí (Cost-Based Optimizer - CBO) và trình tối ưu hóa dựa trên quy tắc (Rule-Based Optimizer - RBO). Dưới đây là giải thích về từng loại:
+
+Cost-Based Optimizer (CBO):
+
+Ý nghĩa: CBO là một trình tối ưu hóa sử dụng thông tin thống kê về cơ sở dữ liệu để đưa ra quyết định tối ưu hóa truy vấn dựa trên chi phí dự kiến của các kế hoạch thực hiện khác nhau.
+Cách hoạt động: Trình CBO thu thập thống kê về cơ sở dữ liệu, như số lượng dòng trong bảng, kích thước trang, và độ chệch của dữ liệu. Dựa trên thông tin này, nó đánh giá chi phí của các kế hoạch thực hiện và chọn kế hoạch có chi phí thấp nhất.
+Rule-Based Optimizer (RBO):
+
+Ý nghĩa: RBO là một trình tối ưu hóa dựa trên một bộ quy tắc được xác định trước để tạo kế hoạch thực hiện.
+Cách hoạt động: Trình RBO tuân theo một số quy tắc xác định trước, chẳng hạn như sử dụng một index nếu có, tránh sử dụng toàn bộ bảng. Nó không dựa vào thống kê chi tiết như CBO, mà thay vào đó sử dụng các quy tắc cụ thể đã được định nghĩa.
+Optimizer Mode:
+
+Ý nghĩa: Trong Oracle, bạn có thể chọn giữa các chế độ tối ưu hóa, bao gồm ALL_ROWS, FIRST_ROWS, và RULE. Chế độ này quyết định cách Oracle tối ưu hóa các truy vấn.
+Cách hoạt động:
+ALL_ROWS: Chế độ này tối ưu hóa để trả về tất cả các dòng kết quả nhanh chóng. Thích hợp cho các truy vấn đòi hỏi tất cả dữ liệu.
+FIRST_ROWS: Chế độ này tối ưu hóa để trả về các dòng kết quả đầu tiên nhanh chóng. Thích hợp cho các ứng dụng yêu cầu thời gian phản hồi nhanh.
+RULE: Sử dụng trình tối ưu hóa dựa trên quy tắc thay vì CBO.
+Lưu ý rằng, hiện nay, Oracle khuyến khích sử dụng CBO vì nó mang lại sự linh hoạt và hiệu suất tốt hơn so với RBO.
+
+
+
+
+

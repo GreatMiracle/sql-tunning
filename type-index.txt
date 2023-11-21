@@ -1,0 +1,25 @@
+Loại đường dẫn truy cập: Có hai loại chính: đường dẫn truy cập bảng và đường dẫn truy cập chỉ mục.
+
+Đường dẫn truy cập bảng: Cách đọc dữ liệu từ một bảng.
+
+Table Access Full (Full Table Scan): Đọc toàn bộ bảng để chọn ra các dòng liên quan.
+
+Table Access by Rowid: Đọc các dòng dựa trên các rowid (định danh duy nhất của mỗi dòng).
+
+Sample Table Scan: Đọc một số dữ liệu ngẫu nhiên từ bảng.
+
+Đường dẫn truy cập chỉ mục: Cách đọc dữ liệu từ một chỉ mục.
+
+Index Unique Scan: Sử dụng khi có điều kiện duy nhất trên khóa chính hoặc khóa duy nhất. Trả về chỉ một rowid.
+
+Index Range Scan: Sử dụng khi có điều kiện trên một số cột dẫn đầu của chỉ mục. Đọc từng khóa của chỉ mục để lấy dòng liên quan.
+
+Index Full Scan: Đọc toàn bộ chỉ mục, thường được sử dụng trong các trường hợp sắp xếp hoặc nhóm.
+
+Index Fast Full Scan: Đọc dữ liệu trực tiếp từ chỉ mục mà không cần đọc từ bảng.
+
+Index Skip Scan: Đọc một số khóa của chỉ mục, có thể bỏ qua các phần không phù hợp với điều kiện.
+
+Index Join Scan: Kết hợp nhiều chỉ mục để trả về kết quả.
+
+Bitmap Access Paths: Sử dụng khi cần sử dụng chỉ mục bitmap hoặc chuyển từ chỉ mục B-tree sang chỉ mục bitmap.

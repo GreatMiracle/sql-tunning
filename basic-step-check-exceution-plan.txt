@@ -1,0 +1,6 @@
+1. Cost
+2. Access Methods
+3.Cardinality or RowIDs
+4. Join Methods and Joint Types
+5.partition Puring
+6.Other
