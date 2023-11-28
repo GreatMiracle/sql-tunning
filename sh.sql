@@ -366,7 +366,7 @@ where e.salary between j.min_salary and j.max_salary;
 
 -- ===================================================================================================================
 -- ===================================================================================================================
-
+/* Outer Join*/
 select * from employees e right outer join departments d
   using(department_id);
  
@@ -406,6 +406,7 @@ select * from employees e right outer join departments d
 
 -- ===================================================================================================================
 -- ===================================================================================================================
+/* Semijions CODE*/
 select * from departments d where exists
   (select 1 from employees e where d.department_id = e.department_id);
   
@@ -418,7 +419,7 @@ select * from employees e where exists
 
 -- ===================================================================================================================
 -- ===================================================================================================================
-
+/* Antijoins CODE*/
 SELECT * FROM departments d WHERE department_id NOT IN
   (SELECT department_id FROM employees e WHERE d.department_id = e.department_id);
  
@@ -433,7 +434,6 @@ SELECT * FROM departments d WHERE NOT EXISTS
  
 SELECT * FROM employees e WHERE NOT EXISTS
   (SELECT 1 FROM departments d WHERE d.department_id = e.department_id);
-
 
 -- ===================================================================================================================
 -- ===================================================================================================================
